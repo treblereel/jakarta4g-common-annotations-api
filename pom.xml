@@ -47,6 +47,13 @@
         <url>https://github.com/treblereel</url>
     </organization>
 
+    <scm>
+        <connection>scm:git:git://github.com/treblereel/jakarta4g-common-annotations-api.git</connection>
+        <developerConnection>scm:git:ssh://github.com/treblereel/jakarta4g-common-annotations-api.git</developerConnection>
+        <url>https://github.com/treblereel/jakarta4g-common-annotations-api/tree/master</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -127,11 +134,12 @@
                         </executions>
                     </plugin>
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>${maven.deploy.plugin}</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.9.0</version>
+                        <extensions>true</extensions>
                         <configuration>
-                            <skip>false</skip>
+                            <publishingServerId>sonatype</publishingServerId>
                         </configuration>
                     </plugin>
                 </plugins>
